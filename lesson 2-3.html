@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        function integer(num1, num2){            
+            if(num1 === "" || num2 === ""){
+                alert("Вы ввели не число!");
+                return;
+            }
+            if(num1 === null || num2 === null){
+                alert("Вы нажали отмена");
+                return;
+            }
+            num1 = Number(num1);
+            num2 = Number(num2);
+            if(isNaN(num1) || isNaN(num2)){
+                alert("Вы ввели не число!");
+                return;
+            }
+            num1=parseInt(num1);
+            num2=parseInt(num2);
+            if (num1>=0 && num2>=0) {
+                return (num1 - num2);
+            }
+            if(num1<0 && num2<0){
+                return (num1 * num2);
+
+            }
+            if(num1 * num2 <0){ 
+                return (num1 + num2);
+            }
+        }
+        let myNum1 = prompt("Введите первое целое число: ");
+        let myNum2 = prompt("Введите второе целое число: ");
+        let result = integer(myNum1, myNum2);
+        if (result !== undefined) {
+            alert(result)
+        }
+    </script>
+</body>
+</html>
