@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        let num = prompt("Ведите сумму котороую хотите внести на счёт.");
+        switch(num){
+            case "":
+            case "0":
+                alert("Вы не ввели сумму для внесения на счёт.");
+                break;
+            case null:
+                alert("Вы нажали отмена");
+                break;
+            default:
+                num = Number(num);
+                switch(isNaN(num)){
+                    case true:
+                        alert("Вы ввели не число.");
+                    default:
+                        let anyString = String(num);
+                        let strLength1 = anyString.length - 2;
+                        let strLength2 = anyString.length - 1; 
+                        switch(anyString.charAt(strLength1)) { 
+                            case "1":
+                                alert ("Ваша сумма в " + anyString + " рублей успешно зачислена.");
+                                break;
+                            default:        
+                                switch(anyString.charAt(strLength2)) { 
+                                    case "1":
+                                        alert ("Ваша сумма в " + anyString + " рубль успешно зачислена.");
+                                        break;
+                                    case "2":
+                                    case "3":
+                                    case "4":
+                                        alert ("Ваша сумма в " + anyString + " рубля успешно зачислена.");
+                                        break;
+                                    case "5":
+                                    case "6":
+                                    case "7":
+                                    case "8":
+                                    case "9":
+                                    case "0":
+                                        alert ("Ваша сумма в " + anyString + " рублей успешно зачислена.");
+                                        break;
+                                }
+                        }
+                }
+        }
+    </script>
+</body>
+</html>
